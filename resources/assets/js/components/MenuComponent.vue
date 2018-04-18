@@ -1,5 +1,5 @@
 <template>
-  <div>
+    <div>
         <div class="menu container-fluid p-0">
             <h3 class="menu__header text-center">Faites vous plaisir, choisissez tout ce qui vous fait envie !</h3>
                 <div class="menu__body container">
@@ -8,7 +8,7 @@
                         <!-- Bloc menu 1 -->
                         <div class="menu__choice col-md-4">
 
-                        <!-- Entrées -->
+                            <!-- Entrées -->
                             <table class="table">
                                 <thead>
                                     <tr>
@@ -32,20 +32,20 @@
                                         <td><button class="btn btn-default" @click="addToCart(menu)">ok</button></td>
                                     </tr>
                                 </tbody>
-                            </table>
-                            <!-- fin entrée -->
+                            </table> <!-- fin entrée -->
+                            
 
                             <!-- Boissons -->
                             <table class="table">
                                 <thead>
                                     <tr>
-                                    <th scope="col">
-                                        <img :src="'images/cocktail.png'" alt="boissons" class="menu-icone">
-                                        Boissons
-                                    </th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
+                                        <th scope="col">
+                                            <img :src="'images/cocktail.png'" alt="boissons" class="menu-icone">
+                                            Boissons
+                                        </th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -59,10 +59,8 @@
                                         <td><button class="btn btn-default" @click="addToCart(menu)">ok</button></td>
                                     </tr>
                                 </tbody>
-                            </table>
-                            <!-- fin boissons -->
-                        <!-- Fin bloc menu 1 -->
-                        </div>
+                            </table> <!-- fin boissons -->
+                        </div> <!-- Fin bloc menu 1 -->
 
                         <!-- Bloc menu 2-->
                         <div class="menu__choice col-md-4">
@@ -91,8 +89,8 @@
                                         <td><button class="btn btn-default" @click="addToCart(menu)">ok</button></td>
                                     </tr>
                                 </tbody>
-                            </table>
-                            <!-- fin plats -->
+                            </table> <!-- fin plats -->
+                            
 
                             <!-- Desserts -->
                             <table class="table">
@@ -118,11 +116,9 @@
                                         <td><button class="btn btn-default" @click="addToCart(menu)">ok</button></td>
                                     </tr>
                                 </tbody>
-                            </table>
-                            <!-- fin desserts -->
-
-                        </div>
-                        <!-- Fin bloc menu 2-->
+                            </table> <!-- fin desserts -->
+                        </div> <!-- Fin bloc menu 2-->
+                        
 
                         <!-- Bloc commande recap' -->
                         <div class="menu__choice col-md-4">
@@ -154,13 +150,13 @@
                                     </tr>
                                 </tbody>
                             </table>
-                        </div>
-                        <!-- Fin bloc commande recap' -->
-
+                        </div> <!-- Fin bloc commande recap' -->
                     </div> <!-- Fin row -->
                 </div> <!-- Fin menu__body -->
-        </div>
+        </div> <!-- Fin menu -->
+
         <FooterMenu></FooterMenu>
+
     </div>
 </template>
 
@@ -195,6 +191,7 @@
                     this.menus = res.data;
                 });
             },
+
             addToCart: function(menu) {
                 this.products.push({
                     id: menu.id,
@@ -204,9 +201,11 @@
                 });
                 this.menus.splice(menu, 1);
             },
+
             plusOne: function(product) {
                 product.qty = product.qty + 1;
             },
+
             minusOne: function(product) {
                 if (product.qty == 1) {
                     this.removeItem(product);
@@ -214,6 +213,7 @@
                     product.qty = product.qty - 1;
                 }
             },
+            
             removeItem: function(product) {
                 this.products.splice(product, 1);   
             },    

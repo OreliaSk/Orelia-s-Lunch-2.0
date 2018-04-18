@@ -43386,10 +43386,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -43424,6 +43420,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
         },
 
+
         addToCart: function addToCart(menu) {
             this.products.push({
                 id: menu.id,
@@ -43433,9 +43430,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
             this.menus.splice(menu, 1);
         },
+
         plusOne: function plusOne(product) {
             product.qty = product.qty + 1;
         },
+
         minusOne: function minusOne(product) {
             if (product.qty == 1) {
                 this.removeItem(product);
@@ -43443,6 +43442,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 product.qty = product.qty - 1;
             }
         },
+
         removeItem: function removeItem(product) {
             this.products.splice(product, 1);
         }
@@ -43479,7 +43479,7 @@ var render = function() {
                         attrs: { src: "images/salad.png", alt: "entrée" }
                       }),
                       _vm._v(
-                        "\n                                      Entrées\n                                  "
+                        "\n                                    Entrées\n                                "
                       )
                     ]),
                     _vm._v(" "),
@@ -43529,7 +43529,7 @@ var render = function() {
                         attrs: { src: "images/cocktail.png", alt: "boissons" }
                       }),
                       _vm._v(
-                        "\n                                      Boissons\n                                  "
+                        "\n                                        Boissons\n                                    "
                       )
                     ]),
                     _vm._v(" "),
@@ -43581,7 +43581,7 @@ var render = function() {
                         attrs: { src: "images/hamburger.png", alt: "plats" }
                       }),
                       _vm._v(
-                        "\n                                          Plats\n                                      "
+                        "\n                                        Plats\n                                    "
                       )
                     ]),
                     _vm._v(" "),
@@ -43631,7 +43631,7 @@ var render = function() {
                         attrs: { src: "images/muffin.png", alt: "boissons" }
                       }),
                       _vm._v(
-                        "\n                                          Desserts\n                                      "
+                        "\n                                        Desserts\n                                    "
                       )
                     ]),
                     _vm._v(" "),
@@ -43746,9 +43746,9 @@ var render = function() {
                       _vm._v(" "),
                       _c("td", { staticClass: "card-footer text-muted" }, [
                         _vm._v(
-                          "\n                                          " +
+                          "\n                                        " +
                             _vm._s(_vm.productsTotal) +
-                            "€\n                                      "
+                            "€\n                                    "
                         )
                       ])
                     ])
