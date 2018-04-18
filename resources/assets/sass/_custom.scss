@@ -44,15 +44,16 @@ $dark-blue: #1F1C2C;
 /**************************************************
 ********************** MENU **********************
 **************************************************/
-.menu{
-    color: #fff;
-}
+
 .menu__header{
     font-family: 'Lobster', cursive;
     font-size: 2.2rem;
     letter-spacing: 1px;
     word-spacing: 1px;
     font-size: 3rem;
+}
+.menu__body{
+    color: #fff;
 }
 .menu__choice{
     background: radial-gradient(circle,  #615d5d, $black);

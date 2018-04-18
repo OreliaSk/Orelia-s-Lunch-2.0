@@ -43495,6 +43495,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -43591,7 +43605,13 @@ var render = function() {
                       _vm._v(
                         "\n                                  Entrées\n                              "
                       )
-                    ])
+                    ]),
+                    _vm._v(" "),
+                    _c("th"),
+                    _vm._v(" "),
+                    _c("th"),
+                    _vm._v(" "),
+                    _c("th")
                   ])
                 ]),
                 _vm._v(" "),
@@ -43635,7 +43655,13 @@ var render = function() {
                       _vm._v(
                         "\n                                  Boissons\n                              "
                       )
-                    ])
+                    ]),
+                    _vm._v(" "),
+                    _c("th"),
+                    _vm._v(" "),
+                    _c("th"),
+                    _vm._v(" "),
+                    _c("th")
                   ])
                 ]),
                 _vm._v(" "),
@@ -43679,9 +43705,15 @@ var render = function() {
                         attrs: { src: "images/hamburger.png", alt: "plats" }
                       }),
                       _vm._v(
-                        "\n                                  Plats\n                              "
+                        "\n                                      Plats\n                                  "
                       )
-                    ])
+                    ]),
+                    _vm._v(" "),
+                    _c("th"),
+                    _vm._v(" "),
+                    _c("th"),
+                    _vm._v(" "),
+                    _c("th")
                   ])
                 ]),
                 _vm._v(" "),
@@ -43723,9 +43755,15 @@ var render = function() {
                         attrs: { src: "images/muffin.png", alt: "boissons" }
                       }),
                       _vm._v(
-                        "\n                                  Desserts\n                              "
+                        "\n                                      Desserts\n                                  "
                       )
-                    ])
+                    ]),
+                    _vm._v(" "),
+                    _c("th"),
+                    _vm._v(" "),
+                    _c("th"),
+                    _vm._v(" "),
+                    _c("th")
                   ])
                 ]),
                 _vm._v(" "),
@@ -43865,9 +43903,11 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
-        _c("th", { attrs: { scope: "col" } }, [
-          _vm._v("Récapitulatif de votre commande")
-        ])
+        _c("th", { attrs: { scope: "col" } }),
+        _vm._v(" "),
+        _c("th", [_vm._v("Récapitulatif de votre commande")]),
+        _vm._v(" "),
+        _c("th")
       ])
     ])
   }

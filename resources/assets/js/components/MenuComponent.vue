@@ -16,6 +16,9 @@
                                     <img :src="'images/salad.png'" alt="entrée" class="menu-icone">
                                     Entrées
                                 </th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -40,6 +43,9 @@
                                     <img :src="'images/cocktail.png'" alt="boissons" class="menu-icone">
                                     Boissons
                                 </th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -65,10 +71,13 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                <th scope="col">
-                                    <img :src="'images/hamburger.png'" alt="plats" class="menu-icone">
-                                    Plats
-                                </th>
+                                    <th scope="col">
+                                        <img :src="'images/hamburger.png'" alt="plats" class="menu-icone">
+                                        Plats
+                                    </th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -89,10 +98,13 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                <th scope="col">
-                                    <img :src="'images/muffin.png'" alt="boissons" class="menu-icone">
-                                    Desserts
-                                </th>
+                                    <th scope="col">
+                                        <img :src="'images/muffin.png'" alt="boissons" class="menu-icone">
+                                        Desserts
+                                    </th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -117,7 +129,9 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th scope="col">Récapitulatif de votre commande</th>
+                                    <th scope="col"></th>
+                                    <th>Récapitulatif de votre commande</th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
