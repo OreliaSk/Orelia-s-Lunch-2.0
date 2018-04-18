@@ -129,32 +129,28 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th scope="col"></th>
-                                        <th>Récapitulatif de votre commande</th>
+                                        <th scope="col">Commande</th>
+                                        <th>Prix à l'unité</th>
+                                        <th>Qté</th>
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr v-for="product in products" v-bind:key="product.id">
                                         <td>{{ product.name }} </td>
-                                            <td>{{product.price }}€</td>
-                                            <td>
-                                                <button v-on:click="removeItem(product)" class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
-                                            </td>
-                                            <td>
-                                                <button v-on:click="minusOne(product)" class="btn btn-primary"><i class="fa fa-caret-square-o-down"></i></button> 
-                                            </td>
-                                            <td><button v-on:click="plusOne(product)" class="btn btn-primary"><i class="fa fa-caret-square-o-up"></i></button></td>
+                                        <td>{{product.price }}€</td>
+                                        <td>{{product.qty}}</td>
+                                        <td>
+                                            <span v-on:click="removeItem(product)" style="cursor:pointer"><i class="fa fa-trash-o"></i></span>
+                                            <span v-on:click="minusOne(product)" style="cursor:pointer"><i class="fa fa-caret-square-o-down"></i></span> 
+                                            <span v-on:click="plusOne(product)" style="cursor:pointer"><i class="fa fa-caret-square-o-up"></i></span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <div class="total">
-                                        <div class="row">
-                                            <p class="col-md-6">Total :</p>
-                                            <p class="card-footer text-muted">
-                                                {{productsTotal}}€
-                                            </p>
-                                        </div>
-                                    </div>
+                                        <td class="col-md-6">Total :</td>
+                                        <td class="card-footer text-muted">
+                                            {{productsTotal}}€
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -187,7 +183,7 @@
             let product;
             
             for (product in this.products) {
-                total = total + (this.products[product].quantity * this.products[product].price);
+                total = total + (this.products[product].qty * this.products[product].price);
             }
             return total;
             }
@@ -204,26 +200,21 @@
                     id: menu.id,
                     name: menu.name,
                     price: menu.price,
-                    quantity: 1
-            });
-            this.menus.splice(menu, 1);
+                    qty: 1
+                });
+                this.menus.splice(menu, 1);
             },
             plusOne: function(product) {
-                product.quantity = product.quantity + 1;
+                product.qty = product.qty + 1;
             },
             minusOne: function(product) {
-                if (product.quantity == 1) {
+                if (product.qty == 1) {
                     this.removeItem(product);
                 } else {
-                    product.quantity = product.quantity - 1;
+                    product.qty = product.qty - 1;
                 }
             },
             removeItem: function(product) {
-                this.menus.push({
-                    id: product.id,
-                    name: product.name,
-                    price: product.price
-                    });
                 this.products.splice(product, 1);   
             },    
         }

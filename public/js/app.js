@@ -43390,10 +43390,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -43413,7 +43409,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var product = void 0;
 
             for (product in this.products) {
-                total = total + this.products[product].quantity * this.products[product].price;
+                total = total + this.products[product].qty * this.products[product].price;
             }
             return total;
         }
@@ -43433,26 +43429,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 id: menu.id,
                 name: menu.name,
                 price: menu.price,
-                quantity: 1
+                qty: 1
             });
             this.menus.splice(menu, 1);
         },
         plusOne: function plusOne(product) {
-            product.quantity = product.quantity + 1;
+            product.qty = product.qty + 1;
         },
         minusOne: function minusOne(product) {
-            if (product.quantity == 1) {
+            if (product.qty == 1) {
                 this.removeItem(product);
             } else {
-                product.quantity = product.quantity - 1;
+                product.qty = product.qty - 1;
             }
         },
         removeItem: function removeItem(product) {
-            this.menus.push({
-                id: product.id,
-                name: product.name,
-                price: product.price
-            });
             this.products.splice(product, 1);
         }
     }
@@ -43695,11 +43686,13 @@ var render = function() {
                         _vm._v(" "),
                         _c("td", [_vm._v(_vm._s(product.price) + "€")]),
                         _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(product.qty))]),
+                        _vm._v(" "),
                         _c("td", [
                           _c(
-                            "button",
+                            "span",
                             {
-                              staticClass: "btn btn-danger",
+                              staticStyle: { cursor: "pointer" },
                               on: {
                                 click: function($event) {
                                   _vm.removeItem(product)
@@ -43707,14 +43700,12 @@ var render = function() {
                               }
                             },
                             [_c("i", { staticClass: "fa fa-trash-o" })]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
+                          ),
+                          _vm._v(" "),
                           _c(
-                            "button",
+                            "span",
                             {
-                              staticClass: "btn btn-primary",
+                              staticStyle: { cursor: "pointer" },
                               on: {
                                 click: function($event) {
                                   _vm.minusOne(product)
@@ -43726,14 +43717,12 @@ var render = function() {
                                 staticClass: "fa fa-caret-square-o-down"
                               })
                             ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
+                          ),
+                          _vm._v(" "),
                           _c(
-                            "button",
+                            "span",
                             {
-                              staticClass: "btn btn-primary",
+                              staticStyle: { cursor: "pointer" },
                               on: {
                                 click: function($event) {
                                   _vm.plusOne(product)
@@ -43751,20 +43740,16 @@ var render = function() {
                     }),
                     _vm._v(" "),
                     _c("tr", [
-                      _c("div", { staticClass: "total" }, [
-                        _c("div", { staticClass: "row" }, [
-                          _c("p", { staticClass: "col-md-6" }, [
-                            _vm._v("Total :")
-                          ]),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "card-footer text-muted" }, [
-                            _vm._v(
-                              "\n                                              " +
-                                _vm._s(_vm.productsTotal) +
-                                "€\n                                          "
-                            )
-                          ])
-                        ])
+                      _c("td", { staticClass: "col-md-6" }, [
+                        _vm._v("Total :")
+                      ]),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "card-footer text-muted" }, [
+                        _vm._v(
+                          "\n                                          " +
+                            _vm._s(_vm.productsTotal) +
+                            "€\n                                      "
+                        )
                       ])
                     ])
                   ],
@@ -43788,9 +43773,11 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
-        _c("th", { attrs: { scope: "col" } }),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Commande")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Récapitulatif de votre commande")]),
+        _c("th", [_vm._v("Prix à l'unité")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Qté")]),
         _vm._v(" "),
         _c("th")
       ])
@@ -44097,7 +44084,7 @@ var render = function() {
                 "button",
                 {
                   staticClass:
-                    "\n                btn btn-default \n                home__button \n                d-block \n                mx-auto",
+                    "\n                    btn btn-default \n                    home__button \n                    d-block \n                    mx-auto",
                   class: { active: _vm.isActive },
                   on: { click: _vm.getMenu }
                 },

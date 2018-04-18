@@ -11,12 +11,12 @@
                         Tu as frappé à la bonne porte !
                     </div>
                     <button class="
-                    btn btn-default 
-                    home__button 
-                    d-block 
-                    mx-auto" 
-                    v-bind:class="{active : isActive}"
-                    v-on:click="getMenu"
+                        btn btn-default 
+                        home__button 
+                        d-block 
+                        mx-auto" 
+                        v-bind:class="{active : isActive}"
+                        v-on:click="getMenu"
                     >
                     J'ai faim !
                     </button>
