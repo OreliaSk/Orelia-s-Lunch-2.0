@@ -1098,6 +1098,7 @@ window.Vue = __webpack_require__(36);
 
 Vue.component('example-component', __webpack_require__(39));
 Vue.component('menucomponent', __webpack_require__(42));
+Vue.component('FooterMenu', __webpack_require__(56));
 
 var app = new Vue({
   el: '#app'
@@ -43584,14 +43585,14 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("div", { staticClass: "menu" }, [
+      _c("div", { staticClass: "menu container-fluid p-0" }, [
         _c("h3", { staticClass: "menu__header text-center" }, [
           _vm._v(
             "Faites vous plaisir, choisissez tout ce qui vous fait envie !"
           )
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "menu__body" }, [
+        _c("div", { staticClass: "menu__body container" }, [
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "menu__choice col-md-4" }, [
               _c("table", { staticClass: "table" }, [
@@ -43603,7 +43604,7 @@ var render = function() {
                         attrs: { src: "images/salad.png", alt: "entrée" }
                       }),
                       _vm._v(
-                        "\n                                  Entrées\n                              "
+                        "\n                                      Entrées\n                                  "
                       )
                     ]),
                     _vm._v(" "),
@@ -43653,7 +43654,7 @@ var render = function() {
                         attrs: { src: "images/cocktail.png", alt: "boissons" }
                       }),
                       _vm._v(
-                        "\n                                  Boissons\n                              "
+                        "\n                                      Boissons\n                                  "
                       )
                     ]),
                     _vm._v(" "),
@@ -43705,7 +43706,7 @@ var render = function() {
                         attrs: { src: "images/hamburger.png", alt: "plats" }
                       }),
                       _vm._v(
-                        "\n                                      Plats\n                                  "
+                        "\n                                          Plats\n                                      "
                       )
                     ]),
                     _vm._v(" "),
@@ -43755,7 +43756,7 @@ var render = function() {
                         attrs: { src: "images/muffin.png", alt: "boissons" }
                       }),
                       _vm._v(
-                        "\n                                      Desserts\n                                  "
+                        "\n                                          Desserts\n                                      "
                       )
                     ]),
                     _vm._v(" "),
@@ -43874,9 +43875,9 @@ var render = function() {
                           _vm._v(" "),
                           _c("p", { staticClass: "card-footer text-muted" }, [
                             _vm._v(
-                              "\n                                          " +
+                              "\n                                              " +
                                 _vm._s(_vm.productsTotal) +
-                                "€\n                                      "
+                                "€\n                                          "
                             )
                           ])
                         ])
@@ -43926,6 +43927,155 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 46 */,
+/* 47 */,
+/* 48 */,
+/* 49 */,
+/* 50 */,
+/* 51 */,
+/* 52 */,
+/* 53 */,
+/* 54 */,
+/* 55 */,
+/* 56 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(9)
+/* script */
+var __vue_script__ = null
+/* template */
+var __vue_template__ = __webpack_require__(57)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\FooterMenu.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-2a414751", Component.options)
+  } else {
+    hotAPI.reload("data-v-2a414751", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 57 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("footer", { staticClass: "banner p-5 footer" }, [
+    _c("div", { staticClass: "row" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("div", { staticClass: "bloc__img col-md-5" }, [
+        _c("img", {
+          staticClass: "banner__img",
+          attrs: { src: "images/banner.jpg", alt: "bannière" }
+        })
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "bloc-text col-md-7 text-justify" }, [
+      _c("h3", { staticClass: "footer__title text-center pb-2" }, [
+        _vm._v("Orelia's Lunch 2.0")
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "\n                    Chez Orelia's Lunch 2.0, notre équipe de professionnels de la cuisine sont à votre service\n                    afin de vous offrir une cuisine rapide et délicieuse !\n                "
+        )
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "\n                    Avec une sélection de produits de qualité, triés drastiquement sur le volet par le Chef Yves Cocovin, \n                    vous trouverez une cuisine faite de simplicité, mêlée d'une touche de perfection.\n                "
+        )
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v("Passez votre commande, nous vous attendons avec vos plats !")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "thanks" }, [
+        _c("p", { staticClass: "p-0 m-0" }, [
+          _vm._v(
+            "*Nous remerçions les artistes suivants pour leurs travaux graphiques :"
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "p-0" }, [
+          _c(
+            "a",
+            { attrs: { href: "http://www.freepik.com", title: "Freepik" } },
+            [_vm._v("Freepik")]
+          ),
+          _vm._v(" from "),
+          _c(
+            "a",
+            { attrs: { href: "https://www.flaticon.com/", title: "Flaticon" } },
+            [_vm._v("www.flaticon.com")]
+          ),
+          _vm._v(" is licensed by "),
+          _c(
+            "a",
+            {
+              attrs: {
+                href: "http://creativecommons.org/licenses/by/3.0/",
+                title: "Creative Commons BY 3.0",
+                target: "_blank"
+              }
+            },
+            [_vm._v("CC 3.0 BY")]
+          )
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-2a414751", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

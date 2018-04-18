@@ -44,19 +44,27 @@ $dark-blue: #1F1C2C;
 /**************************************************
 ********************** MENU **********************
 **************************************************/
-
+.menu{
+    margin-bottom: 5vh;
+}
 .menu__header{
     font-family: 'Lobster', cursive;
     font-size: 2.2rem;
     letter-spacing: 1px;
     word-spacing: 1px;
     font-size: 3rem;
+    margin-top: 0 !important;
+    margin-bottom: 5vh;
+    padding-top: 7vh;
+    background-color: #ccc;
+    height: 20vh;
 }
 .menu__body{
     color: #fff;
 }
 .menu__choice{
     background: radial-gradient(circle,  #615d5d, $black);
+    border-left: 5px solid #fff;
 }
 
 

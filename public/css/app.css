@@ -8399,12 +8399,21 @@ button.close {
 ********************** MENU **********************
 **************************************************/
 
+.menu {
+  margin-bottom: 5vh;
+}
+
 .menu__header {
   font-family: 'Lobster', cursive;
   font-size: 2.2rem;
   letter-spacing: 1px;
   word-spacing: 1px;
   font-size: 3rem;
+  margin-top: 0 !important;
+  margin-bottom: 5vh;
+  padding-top: 7vh;
+  background-color: #ccc;
+  height: 20vh;
 }
 
 .menu__body {
@@ -8413,6 +8422,7 @@ button.close {
 
 .menu__choice {
   background: radial-gradient(circle, #615d5d, #3b3b3d);
+  border-left: 5px solid #fff;
 }
 
 .border {
