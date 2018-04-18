@@ -43428,15 +43428,68 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            menus: []
+            menus: [],
+            products: []
         };
     },
     created: function created() {
         this.fetchMenus();
+    },
+
+
+    computed: {
+        productsTotal: function productsTotal() {
+            var total = 0;
+            var product = void 0;
+
+            for (product in this.products) {
+                total = total + this.products[product].quantity * this.products[product].price;
+            }
+            return total;
+        }
     },
 
     methods: {
@@ -43445,8 +43498,35 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             axios.get('api/menus').then(function (res) {
                 _this.menus = res.data;
-                console.log(_this.menus);
             });
+        },
+
+        addToCart: function addToCart(menu) {
+            this.products.push({
+                id: menu.id,
+                name: menu.name,
+                price: menu.price,
+                quantity: 1
+            });
+            this.menus.splice(menu, 1);
+        },
+        plusOne: function plusOne(product) {
+            product.quantity = product.quantity + 1;
+        },
+        minusOne: function minusOne(product) {
+            if (product.quantity == 1) {
+                this.removeItem(product);
+            } else {
+                product.quantity = product.quantity - 1;
+            }
+        },
+        removeItem: function removeItem(product) {
+            this.menus.push({
+                id: product.id,
+                name: product.name,
+                price: product.price
+            });
+            this.products.splice(product, 1);
         }
     }
 });
@@ -43473,7 +43553,20 @@ var render = function() {
                 _vm._v(" "),
                 _c("td", [_vm._v(_vm._s(menu.price) + "€")]),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(menu.qty))])
+                _c("td", [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "btn btn-primary",
+                      on: {
+                        click: function($event) {
+                          _vm.addToCart(menu)
+                        }
+                      }
+                    },
+                    [_vm._v("Ajouter")]
+                  )
+                ])
               ])
             })
           )
@@ -43490,7 +43583,22 @@ var render = function() {
                 _vm._v(" "),
                 _c("td", [_vm._v(_vm._s(menu.price) + "€")]),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(menu.qty))])
+                _c("td"),
+                _vm._v(" "),
+                _c("td", [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "btn btn-primary",
+                      on: {
+                        click: function($event) {
+                          _vm.addToCart(menu)
+                        }
+                      }
+                    },
+                    [_vm._v("Ajouter")]
+                  )
+                ])
               ])
             })
           )
@@ -43509,7 +43617,20 @@ var render = function() {
                 _vm._v(" "),
                 _c("td", [_vm._v(_vm._s(menu.price) + "€")]),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(menu.qty))])
+                _c("td", [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "btn btn-primary",
+                      on: {
+                        click: function($event) {
+                          _vm.addToCart(menu)
+                        }
+                      }
+                    },
+                    [_vm._v("Ajouter")]
+                  )
+                ])
               ])
             })
           )
@@ -43526,14 +43647,105 @@ var render = function() {
                 _vm._v(" "),
                 _c("td", [_vm._v(_vm._s(menu.price) + "€")]),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(menu.qty))])
+                _c("td", [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "btn btn-primary",
+                      on: {
+                        click: function($event) {
+                          _vm.addToCart(menu)
+                        }
+                      }
+                    },
+                    [_vm._v("Ajouter")]
+                  )
+                ])
               ])
             })
           )
         ])
       ]),
       _vm._v(" "),
-      _vm._m(4)
+      _c("div", { staticClass: "col-md-4 commande" }, [
+        _c("table", { staticClass: "table" }, [
+          _vm._m(4),
+          _vm._v(" "),
+          _c(
+            "tbody",
+            [
+              _vm._l(_vm.products, function(product) {
+                return _c("tr", { key: product.id }, [
+                  _c("td", [_vm._v(_vm._s(product.name) + " ")]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(product.price) + "€")]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _c(
+                      "button",
+                      {
+                        on: {
+                          click: function($event) {
+                            _vm.removeItem(product)
+                          }
+                        }
+                      },
+                      [_c("i", { staticClass: "fa fa-trash-o" })]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _c(
+                      "button",
+                      {
+                        on: {
+                          click: function($event) {
+                            _vm.minusOne(product)
+                          }
+                        }
+                      },
+                      [_c("i", { staticClass: "fa fa-caret-square-o-down" })]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        on: {
+                          click: function($event) {
+                            _vm.plusOne(product)
+                          }
+                        }
+                      },
+                      [_c("i", { staticClass: "fa fa-caret-square-o-up" })]
+                    ),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "badge" }, [
+                      _vm._v(_vm._s(product.qty))
+                    ])
+                  ])
+                ])
+              }),
+              _vm._v(" "),
+              _c("tr", [
+                _c("div", { staticClass: "total" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _c("p", { staticClass: "col-md-6" }, [_vm._v("Total :")]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "card-footer text-muted" }, [
+                      _vm._v(
+                        "\n                                " +
+                          _vm._s(_vm.productsTotal) +
+                          "€\n                            "
+                      )
+                    ])
+                  ])
+                ])
+              ])
+            ],
+            2
+          )
+        ])
+      ])
     ])
   ])
 }
@@ -43548,7 +43760,9 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Prix")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Quantité")])
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Quantité")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Validation")])
       ])
     ])
   },
@@ -43557,7 +43771,15 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("thead", { staticClass: "thead-dark" }, [
-      _c("tr", [_c("th", { attrs: { scope: "col" } }, [_vm._v("Boissons")])])
+      _c("tr", [
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Boissons")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Prix")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Quantité")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Validation")])
+      ])
     ])
   },
   function() {
@@ -43565,7 +43787,15 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("thead", { staticClass: "thead-dark" }, [
-      _c("tr", [_c("th", { attrs: { scope: "col" } }, [_vm._v("Plats")])])
+      _c("tr", [
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Plats")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Prix")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Quantité")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Validation")])
+      ])
     ])
   },
   function() {
@@ -43573,30 +43803,28 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("thead", { staticClass: "thead-dark" }, [
-      _c("tr", [_c("th", { attrs: { scope: "col" } }, [_vm._v("Desserts")])])
+      _c("tr", [
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Desserts")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Prix")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Quantité")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Validation")])
+      ])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-4 commande" }, [
-      _c("table", { staticClass: "table" }, [
-        _c("thead", { staticClass: "thead-dark" }, [
-          _c("tr", [
-            _c("th", { attrs: { scope: "col" } }, [_vm._v("Votre commande")])
-          ])
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { attrs: { scope: "col" } }, [
+          _vm._v("Récapitulatif de votre commande")
         ]),
         _vm._v(" "),
-        _c("tbody", [
-          _c("tr", [
-            _c("td", [_vm._v("Mark")]),
-            _vm._v(" "),
-            _c("td", [_vm._v("Otto")]),
-            _vm._v(" "),
-            _c("td", [_vm._v("@mdo")])
-          ])
-        ])
+        _c("th", [_vm._v("Prix à l'unité")])
       ])
     ])
   }
