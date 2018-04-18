@@ -43864,13 +43864,13 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("footer", { staticClass: "banner p-5 footer" }, [
+  return _c("footer", { staticClass: "p-5 footer" }, [
     _c("div", { staticClass: "row" }, [
       _vm._m(0),
       _vm._v(" "),
-      _c("div", { staticClass: "bloc__img col-md-5" }, [
+      _c("div", { staticClass: "footer__img col-md-5" }, [
         _c("img", {
-          staticClass: "banner__img",
+          staticClass: "footer__banner",
           attrs: { src: "images/banner.jpg", alt: "bannière" }
         })
       ])
@@ -43882,7 +43882,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "bloc-text col-md-7 text-justify" }, [
+    return _c("div", { staticClass: "footer__text col-md-7 text-justify" }, [
       _c("h3", { staticClass: "footer__title text-center pb-2" }, [
         _vm._v("Orelia's Lunch 2.0")
       ]),
@@ -43903,7 +43903,7 @@ var staticRenderFns = [
         _vm._v("Passez votre commande, nous vous attendons avec vos plats !")
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "thanks" }, [
+      _c("div", { staticClass: "footer__thanks" }, [
         _c("p", { staticClass: "p-0 m-0" }, [
           _vm._v(
             "*Nous remerçions les artistes suivants pour leurs travaux graphiques :"
@@ -44103,7 +44103,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "title text-center" }, [
+    return _c("div", { staticClass: "home__header text-center" }, [
       _vm._v("\n                    Besoin d'une pause dèj ?"),
       _c("br"),
       _vm._v(

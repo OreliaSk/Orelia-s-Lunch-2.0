@@ -1,0 +1,45 @@
+/*************************************************/
+/**************** HOME COMPONENT ****************/
+/***********************************************/
+.home{
+    background: -webkit-linear-gradient(to right, $black, #868383);  
+    background: linear-gradient(to right, $black, #868383); 
+    font-family: 'Lobster', cursive;
+    height: $l-height;
+}
+.home__img{
+    height: $l-height;
+}
+.home__header{
+    color: $white;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    padding-top: 40vh;
+    word-spacing: 3px;
+}
+.home__button{
+    background-color: papayawhip;
+    border: 2px solid rgb(220, 20, 60);
+    border-radius: 40px;
+    font-size: 2rem;
+    margin-top: 6vh;
+    transition: 1s ease all !important;
+}
+.active{
+    -webkit-box-shadow: 5px 10px 50px 16px rgba(220, 20, 60,1) !important;
+    -moz-box-shadow: 5px 10px 50px 16px rgba(220, 20, 60,1) !important;
+    box-shadow: 5px 10px 50px 16px rgba(220, 20, 60,1) !important;
+    transition: 1s ease all !important;
+}
+
+@media screen and (max-width: 1200px) {
+    .home__header{
+        padding-top: 20vh;
+    }
+    .home__img {
+        display:none;
+    }
+    .home__text{
+        margin: auto;
+    }
+}

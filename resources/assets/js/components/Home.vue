@@ -6,7 +6,7 @@
                     <img :src="'images/couple-diner.jpg'" alt="couple-diner" class="home__img">
                 </div>
                 <div class="home__text col-md-5">
-                    <div class="title text-center">
+                    <div class="home__header text-center">
                         Besoin d'une pause dèj ?<br>
                         Tu as frappé à la bonne porte !
                     </div>
