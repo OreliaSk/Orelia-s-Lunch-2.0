@@ -199,7 +199,7 @@
                     price: menu.price,
                     qty: 1
                 });
-                this.menus.splice(menu, 1);
+                //this.menus.splice(menu, 1);
             },
 
             plusOne: function(product) {
