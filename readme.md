@@ -1,9 +1,6 @@
-# Orelia's Lunch 2.0 (using Laravel/Vuejs2)
+# Orelia's Lunch 2.0 (using Laravel/Vuejs2) ![alt text](https://github.com/OreliaSk/Orelia-s-Lunch-2.0/blob/master/screenshots/oreliaslunch2.0.png)
 
 A simple shopping list application for restaurant. Test it !
-![alt text](https://github.com/OreliaSk/Orelia-s-Lunch-2.0/blob/master/screenshots/home.png)
-![alt text](https://github.com/OreliaSk/Orelia-s-Lunch-2.0/blob/master/screenshots/menu.png)
-![alt text](https://github.com/OreliaSk/Orelia-s-Lunch-2.0/blob/master/screenshots/us.png)
 
 ### Prerequisites
 
@@ -39,7 +36,11 @@ $ npm run dev
 * **Orélia Sokambi** - Web developper 
 
 ## Good to know
-You will find screenshots of the app [here](https://github.com/OreliaSk/Orelia-s-Lunch-2.0/tree/master/screenshots)
+You will find screenshots of the app [here](https://github.com/OreliaSk/Orelia-s-Lunch-2.0/tree/master/screenshots)  
+
+
+![alt text](https://github.com/OreliaSk/Orelia-s-Lunch-2.0/blob/master/screenshots/home.png)
+![alt text](https://github.com/OreliaSk/Orelia-s-Lunch-2.0/blob/master/screenshots/menuorelia.png)
 
 ## License
 
