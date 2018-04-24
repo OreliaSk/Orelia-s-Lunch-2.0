@@ -1,4 +1,6 @@
-# Orelia's Lunch 2.0 (using Laravel/Vuejs2) ![alt text](https://github.com/OreliaSk/Orelia-s-Lunch-2.0/blob/master/screenshots/oreliaslunch2.0.png)
+![alt text](https://github.com/OreliaSk/Orelia-s-Lunch-2.0/blob/master/screenshots/oreliaslunch2.0.png)
+
+# Orelia's Lunch 2.0 (using Laravel/Vuejs2) 
 
 A simple shopping list application for restaurant. Test it !
 
